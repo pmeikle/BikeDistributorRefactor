@@ -13,8 +13,8 @@
             Price = price;
         }
 
-        public string Brand { get; private set; }
-        public string Model { get; private set; }
-        public int Price { get; set; }
+        public string Brand { get; }
+        public string Model { get; }
+        public int Price { get; }
     }
 }
