@@ -50,8 +50,12 @@
     </Otherwise>
   </Choose>
   <ItemGroup>
-    <Compile Include="OrderTest.cs" />
+    <Compile Include="HtmlReceiptPrintingTest.cs" />
+    <Compile Include="HtmlReceiptPrintingWithDiscountsTest.cs" />
+    <Compile Include="TextReceiptPrintingTest.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="TestBikeData.cs" />
+    <Compile Include="TextReceiptPrintingWithDiscountsTest.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\BikeDistributor\BikeDistributor.csproj">
