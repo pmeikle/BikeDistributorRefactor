@@ -39,6 +39,8 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Discount.cs" />
+    <Compile Include="DiscountCalculator.cs" />
     <Compile Include="Order.cs" />
     <Compile Include="Bike.cs" />
     <Compile Include="Printers\HtmlReceiptPrinter.cs" />

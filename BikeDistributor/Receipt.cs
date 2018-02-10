@@ -14,12 +14,12 @@ namespace BikeDistributor
 
         public static Receipt ForOrder(Order order)
         {
-            var subTotal = order.Lines.ToList().Sum(line => line.GetLineTotalWithDiscount());
+            var subTotal = order.Lines.ToList().Sum(line => DiscountCalculator.CalculateDiscountedLineCost(order.Discounts, line));
             var taxes = subTotal * TaxRate;
             return new Receipt()
             {
                 CompanyName = $"Order Receipt for {order.Company}",
-                LineItems = order.Lines.ToList().Select(line => $"{line.Quantity} x {line.Bike.Brand} {line.Bike.Model} = {line.GetLineTotalWithDiscount():C}").ToList(),
+                LineItems = order.Lines.ToList().Select(line => $"{line.Quantity} x {line.Bike.Brand} {line.Bike.Model} = {DiscountCalculator.CalculateDiscountedLineCost(order.Discounts, line):C}").ToList(),
                 SubTotal = $"Sub-Total: {subTotal:C}",
                 Tax = $"Tax: {taxes:C}",
                 Total = $"Total: {subTotal + taxes:C}"

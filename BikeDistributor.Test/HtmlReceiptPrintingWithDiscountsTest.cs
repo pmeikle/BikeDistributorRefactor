@@ -1,4 +1,5 @@
-﻿using BikeDistributor.Printers;
+﻿using System.Security.Cryptography;
+using BikeDistributor.Printers;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 
 namespace BikeDistributor.Test
@@ -11,6 +12,7 @@ namespace BikeDistributor.Test
         {
             var order = new Order("Anywhere Bike Shop");
             order.AddLine(new Line(TestBikeData.Defy, 20));
+            order.AddDiscounts(TestBikeData.Discounts);
             Assert.AreEqual(HtmlResultStatementTwentyDefy, new HtmlReceiptPrinter().Print(order));
         }
 
@@ -23,6 +25,7 @@ namespace BikeDistributor.Test
         {
             var order = new Order("Anywhere Bike Shop");
             order.AddLine(new Line(TestBikeData.Defy, 19));
+            order.AddDiscounts(TestBikeData.Discounts);
             Assert.AreEqual(HtmlResultStatementNineteenDefy, new HtmlReceiptPrinter().Print(order));
         }
 
@@ -33,6 +36,7 @@ namespace BikeDistributor.Test
         {
             var order = new Order("Anywhere Bike Shop");
             order.AddLine(new Line(TestBikeData.Elite, 10));
+            order.AddDiscounts(TestBikeData.Discounts);
             Assert.AreEqual(HtmlResultStatementTenElite, new HtmlReceiptPrinter().Print(order));
         }
 
@@ -43,6 +47,7 @@ namespace BikeDistributor.Test
         {
             var order = new Order("Anywhere Bike Shop");
             order.AddLine(new Line(TestBikeData.Elite, 9));
+            order.AddDiscounts(TestBikeData.Discounts);
             Assert.AreEqual(HtmlResultStatementNineElite, new HtmlReceiptPrinter().Print(order));
         }
 
@@ -53,6 +58,7 @@ namespace BikeDistributor.Test
         {
             var order = new Order("Anywhere Bike Shop");
             order.AddLine(new Line(TestBikeData.DuraAce, 5));
+            order.AddDiscounts(TestBikeData.Discounts);
             Assert.AreEqual(HtmlResultStatementFiveDuraAce, new HtmlReceiptPrinter().Print(order));
         }
 
@@ -63,6 +69,7 @@ namespace BikeDistributor.Test
         {
             var order = new Order("Anywhere Bike Shop");
             order.AddLine(new Line(TestBikeData.DuraAce, 4));
+            order.AddDiscounts(TestBikeData.Discounts);
             Assert.AreEqual(HtmlResultStatementFourDuraAce, new HtmlReceiptPrinter().Print(order));
         }
 

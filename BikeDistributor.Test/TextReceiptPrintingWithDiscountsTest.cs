@@ -11,6 +11,7 @@ namespace BikeDistributor.Test
         {
             var order = new Order("Anywhere Bike Shop");
             order.AddLine(new Line(TestBikeData.Defy, 20));
+            order.AddDiscounts(TestBikeData.Discounts);
             Assert.AreEqual(ResultStatementTwentyDefy, new TextReceiptPrinter().Print(order));
         }
 
@@ -25,6 +26,7 @@ Total: $19,305.00";
         {
             var order = new Order("Anywhere Bike Shop");
             order.AddLine(new Line(TestBikeData.Defy, 19));
+            order.AddDiscounts(TestBikeData.Discounts);
             Assert.AreEqual(ResultStatementNineteenDefy, new TextReceiptPrinter().Print(order));
         }
 
@@ -39,6 +41,7 @@ Total: $20,377.50";
         {
             var order = new Order("Anywhere Bike Shop");
             order.AddLine(new Line(TestBikeData.Elite, 10));
+            order.AddDiscounts(TestBikeData.Discounts);
             Assert.AreEqual(ResultStatementTenElite, new TextReceiptPrinter().Print(order));
         }
 
@@ -53,6 +56,7 @@ Total: $17,160.00";
         {
             var order = new Order("Anywhere Bike Shop");
             order.AddLine(new Line(TestBikeData.Elite, 9));
+            order.AddDiscounts(TestBikeData.Discounts);
             Assert.AreEqual(ResultStatementNineElite, new TextReceiptPrinter().Print(order));
         }
 
@@ -67,6 +71,7 @@ Total: $19,305.00";
         {
             var order = new Order("Anywhere Bike Shop");
             order.AddLine(new Line(TestBikeData.DuraAce, 5));
+            order.AddDiscounts(TestBikeData.Discounts);
             Assert.AreEqual(ResultStatementFiveDuraAce, new TextReceiptPrinter().Print(order));
         }
 
@@ -81,6 +86,7 @@ Total: $21,450.00";
         {
             var order = new Order("Anywhere Bike Shop");
             order.AddLine(new Line(TestBikeData.DuraAce, 4));
+            order.AddDiscounts(TestBikeData.Discounts);
             Assert.AreEqual(ResultStatementFourDuraAce, new TextReceiptPrinter().Print(order));
         }
 
